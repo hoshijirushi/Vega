@@ -226,13 +226,7 @@ class tangible(object):
 			liveIDs = []
 			for externalCursor in self.externalCursors:
 				liveIDs.append(externalCursor.id)
-			try:
-				cursorIntersection = filter(set(liveIDs).__contains__, self.lastSuccesfulRunIDs)
-			except Exception, e:
-				print "Failure: %s" % e
-				print "liveIDs", liveIDs
-				print "LSFR", self.lastSuccesfulRunIDs
-			
+			cursorIntersection = filter(set(liveIDs).__contains__, self.lastSuccesfulRunIDs)
 			
 			#check if at least two cursors are left
 			if len(cursorIntersection) > 1:
